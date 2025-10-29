@@ -1,0 +1,13 @@
+# Ignore the large synthetic test data
+test_data/
+
+# Ignore the deduplication cache
+chunk_store/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment files
+.venv/
+venv/

@@ -1,0 +1,40 @@
+{
+  "rules": [
+    {
+      "name": "baseline_raw",
+      "path_match": "test_data/*.dat",
+      "hot_tier_days": 9999,
+      "warm_tier_days": 0,
+      "retention_days": 9999,
+      "warm_tier_action": "none",
+      "cold_tier_action": "none"
+    },
+    {
+      "name": "log_files_compress",
+      "path_match": "test_data/*.log",
+      "hot_tier_days": 1,
+      "warm_tier_days": 5,
+      "retention_days": 15,
+      "warm_tier_action": "compress",
+      "cold_tier_action": "archive"
+    },
+    {
+      "name": "redundant_files_dedupe",
+      "path_match": "test_data/*.bin",
+      "hot_tier_days": 1,
+      "warm_tier_days": 4,
+      "retention_days": 20,
+      "warm_tier_action": "deduplicate",
+      "cold_tier_action": "archive"
+    },
+    {
+      "name": "time_series_aggregate",
+      "path_match": "test_data/*.csv",
+      "hot_tier_days": 1,
+      "warm_tier_days": 7,
+      "retention_days": 30,
+      "warm_tier_action": "aggregate",
+      "cold_tier_action": "archive"
+    }
+  ]
+}
